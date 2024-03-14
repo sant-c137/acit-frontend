@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/acit-frontend" element={<Home />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/articles" element={<Articles />} />
         <Route path="/sign-in" element={<Login />} />
