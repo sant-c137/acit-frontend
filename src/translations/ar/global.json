@@ -1,0 +1,47 @@
+{
+  "header": {
+    "sign-in": "تسجيل-الدخول",
+    "create-account": "إنشاء-حساب",
+    "home": "الصفحة-الرئيسية",
+    "courses": "الدورات",
+    "articles": "المقالات",
+    "accreditations-partners": "الاعتمادات-والشركاء",
+    "call-us": "اتصل-بنا"
+  },
+  "footer": {
+    "stay-updated": "ابق-على-اطلاع",
+    "subscribe-newsletter": "اشترك-في-نشرتنا-الإخبارية",
+    "email-placeholder": "بريدك-الالكتروني",
+    "subscribe": "اشترك",
+    "phone-number": "00966549999999-99999999",
+    "email": "info@aACIT.com.sa",
+    "certificates-and-courses": "الشهادات-و-الدورات",
+    "cisco": "سيسكو-)-Cisco-(",
+    "microsoft": "ميكروسوفت-)-Microsoft-(",
+    "oracle": "اوراكل-)-Oracle-(",
+    "juniper": "جونيبر-)-juniper-(",
+    "ec-council": "اي-سي-كونسل-)-EC-Council-(",
+    "view-all": "عرض-الكل-{{symbol}}",
+    "quick-links": "روابط-سريعة",
+    "home": "الرئيسية",
+    "about-institute": "عن-المعهد",
+    "intro-videos": "فديوهات-تعريفية",
+    "contact-us": "اتصل-بنا",
+    "blog": "المدونة",
+    "site-map": "خريطة-الموقع",
+    "arabic": "العربية-(AR)",
+    "copyright": "حقوق-النشر-©-2023,-ACIT"
+  },
+  "acit-main-content": {
+    "new-title": "جديد",
+    "knowledge-title": "من المعرفة",
+    "discover-title": "اكتشف",
+    "world-title": "عالم",
+    "description": "نفتح ابواب المعرفة والتطور لك ، انضم الينا اليوم وابدأ رحلة تعلم لاتنسى",
+    "start-now": "ابدأ الآن",
+    "facilities": "منشأة مستفيدة",
+    "professionals": "متدرب محترف",
+    "accredited-courses": "دورة معتمدة",
+    "training-sessions": "جلسة تدريبية"
+  }
+}

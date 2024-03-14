@@ -1,0 +1,34 @@
+
+.info-courses {
+  background: linear-gradient(
+    110.23deg,
+    rgba(255, 255, 255, 0.5) -48.01%,
+    rgba(131, 221, 255, 0.5) 371.76%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-courses-description {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  color: #13a3d9;
+  margin: 0;
+}
+
+.info-courses-title {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 150%;
+  color: #0b325c;
+  margin: 0;
+}
+
+.courses-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}

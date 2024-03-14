@@ -1,0 +1,47 @@
+{
+  "header": {
+    "sign-in": "Sign In",
+    "create-account": "Create Account",
+    "home": "Home",
+    "courses": "Courses",
+    "articles": "Articles",
+    "accreditations-partners": "Accreditations & Partners",
+    "call-us": "Call Us"
+  },
+  "footer": {
+    "stay-updated": "Stay Updated",
+    "subscribe-newsletter": "Subscribe to Our Newsletter",
+    "email-placeholder": "Your Email",
+    "subscribe": "Subscribe",
+    "phone-number": "00966549999999 - 99999999",
+    "email": "info@aACIT.com.sa",
+    "certificates-and-courses": "Certificates and Courses",
+    "cisco": "Cisco",
+    "microsoft": "Microsoft",
+    "oracle": "Oracle",
+    "juniper": "Juniper",
+    "ec-council": "EC-Council",
+    "view-all": "View All {{symbol}}",
+    "quick-links": "Quick Links",
+    "home": "Home",
+    "about-institute": "About Institute",
+    "intro-videos": "Introductory Videos",
+    "contact-us": "Contact Us",
+    "blog": "Blog",
+    "site-map": "Site Map",
+    "arabic": "Arabic (AR)",
+    "copyright": "Copyright © 2023, ACIT"
+  },
+  "acit-main-content": {
+    "new-title": "New",
+    "knowledge-title": "from Knowledge",
+    "discover-title": "Discover",
+    "world-title": "the World",
+    "description": "We open the doors of knowledge and development for you, join us today and start an unforgettable learning journey",
+    "start-now": "Start Now",
+    "facilities": "Benefiting Facilities",
+    "professionals": "Professional Trainees",
+    "accredited-courses": "Accredited Courses",
+    "training-sessions": "Training Sessions"
+  }
+}

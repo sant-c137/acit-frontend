@@ -1,0 +1,140 @@
+.Courses-card {
+  width: 325px;
+height: 345px;
+
+  box-shadow: 0px 0px 24px rgba(57, 192, 192, 0.2);
+  border-radius: 16px;
+
+  background: #ffffff;
+}
+
+.Courses-card-bg-image {
+  background-image: url('./BackgroundCoursesCard.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 242px;
+  border-radius: 16px 16px 0px 0px;
+
+  display: flex;
+  align-items: end;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.Courses-card-bg-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.Courses-card-name {
+  color: #ffffff;
+  margin: 0px 0px;
+
+  font-weight: 700;
+  font-size: 21.6702px;
+  line-height: 41px;
+
+  color: #ffffff;
+  z-index: 1;
+}
+
+.Courses-card-most-subscribed {
+  position: absolute;
+
+  width: 113px;
+  height: 35px;
+  left: 66%;
+  top: 10%;
+
+  background: #0b325c;
+  border-radius: 24px 0px 0px 24px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 26px;
+
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+}
+
+.Courses-card-info {
+  padding: 15px;
+}
+
+.Courses-card-info h1 {
+  text-align: right;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: right;
+  letter-spacing: 0.15px;
+
+  color: #0b325c;
+  margin-top: 0;
+}
+
+.Courses-card-info-0 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Courses-card-info-1 {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 24px;
+  text-align: right;
+  letter-spacing: 0.15px;
+
+  color: #1a457b9c;
+  gap: 8px;
+}
+
+.Courses-card-info-1 div {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 3px;
+
+
+font-weight: 700;
+font-size: 10px;
+line-height: 19px;
+
+color: rgba(26, 69, 123, 0.61);
+
+
+}
+
+
+
+.Courses-start-now-btn {
+  background-color: #13a3d9;
+  width: 79px;
+  height: 32px;
+  border-radius: 52px;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 22px;
+}

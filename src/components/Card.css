@@ -1,0 +1,46 @@
+.cards-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 16px;
+  height: 172px;
+  width: 159px;
+  justify-content: center;
+  text-transform: capitalize;
+}
+
+.card h1 {
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #1a457b;
+  margin: 0;
+}
+
+.card p {
+  font-weight: 500;
+  font-size: 8px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: rgba(26, 69, 123, 0.5);
+  margin: 0;
+}
+
+.circle-frame {
+  background-color: white;
+  border-radius: 100px;
+  height: 76px;
+  width: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
+}

@@ -1,0 +1,135 @@
+.logo-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.header-sections {
+  z-index: 1;
+}
+
+.header-sections ul {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  line-height: 0;
+  gap: 30px;
+  list-style: none;
+  z-index: 10000;
+  margin: 0;
+  padding: 0;
+}
+
+.header-sections ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.login-singin {
+  display: inherit;
+  gap: 12px;
+  align-items: center;
+}
+
+.login-button {
+  background-color: #13a3d9;
+  border-radius: 12px;
+  width: 100px;
+  height: 37px;
+  color: white;
+  border: none;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: 20.61px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #0c87b5;
+  opacity: 0.9; 
+  color: rgba(255, 255, 255, 0.8); 
+}
+
+.create-account-button {
+  border-radius: 12px;
+  border: 1px solid #13a3d9;
+  background: transparent;
+  border-radius: 12px;
+  width: 100px;
+  height: 37px;
+  color: white;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: 1rem;
+}
+
+.create-account-button:hover {
+  background-color: #0c87b5;
+  opacity: 0.9; 
+  color: rgba(255, 255, 255, 0.8); 
+}
+
+
+.language-selector {
+  background: transparent;
+  border: none;
+  color: inherit;
+}
+
+.language-container {
+  display: inherit;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  height: 68px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.check-button {
+  display: none;
+}
+
+#check {
+  display: none;
+  position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+  .header-sections ul li {
+    display: none;
+  }
+
+  .check-button {
+    display: block;
+  }
+
+  .login-singin {
+    display: none;
+  }
+
+  #check:checked ~ .login-singin {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    left: 20px;
+    top: 100px;
+  }
+
+  #check:checked ~ .header-sections ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    left: 20px;
+    top: 100px;
+  }
+}

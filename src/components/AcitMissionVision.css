@@ -1,0 +1,36 @@
+.vision-mision {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vision-mision p {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 41px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #13a3d9;
+}
+
+.vision-mision-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.placeholder-circle {
+  width: 148px;
+  height: 147px;
+  background: #ffffff;
+  box-shadow: 0px 4px 24px rgba(57, 192, 192, 0.48);
+  border-radius: 100%;
+}
+
+.slider-contaniner {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}

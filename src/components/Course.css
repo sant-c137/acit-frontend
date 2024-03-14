@@ -1,0 +1,151 @@
+.courses {
+  width: 353px;
+  background: #ffffff;
+  box-shadow: 0px 0px 24px rgba(57, 192, 192, 0.2);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 30px 0px 30px;
+  padding-right: 60px;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+
+.course-info-0 {
+  display: flex;
+  flex-direction: row-reverse;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 21px;
+  text-align: right;
+  letter-spacing: 0.15px;
+  color: #0b325c;
+}
+
+.course-info-1 {
+  display: flex;
+  flex-direction: row-reverse;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 24px;
+  text-align: right;
+  letter-spacing: 0.15px;
+
+  color: rgba(57, 192, 192, 0.62);
+  gap: 8px;
+}
+.course-info-1 div {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 5px;
+}
+
+.course-info-2 {
+  display: flex;
+  flex-direction: row-reverse;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 24px;
+  text-align: right;
+  letter-spacing: 0.15px;
+
+  color: #1a457b9c;
+  gap: 24px;
+}
+
+.course-info-2 div {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 5px;
+}
+
+.start-now-btn {
+  background-color: #13a3d9;
+  width: 114px;
+  height: 42px;
+  border-radius: 52px;
+  border: none;
+  color: white;
+  /* align-self: center; */
+  margin-bottom: 15px;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 26.24px;
+}
+
+.price {
+  width: 114px;
+  height: 42px;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  background-color: transparent;
+  color: #39c0c0;
+  border-width: 2px 2px 0px 2px;
+  border-style: solid;
+  border-color: #13a3d9;
+  border-radius: 22px 22px 0px 0px;
+}
+
+.price strong {
+  font-size: 11px;
+  width: 91px;
+  height: 27px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 16px;
+  color: #1a457b;
+}
+
+.btn-container {
+  display: flex;
+  align-items: end;
+  gap: 35px;
+}
+
+.course-image {
+  border: 6px solid #13a3d9;
+  border-radius: 160px 160px 32px 32px;
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+  width: 197.51px;
+  height: 254.29px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.course-image img {
+  width: 86px;
+  height: 14px;
+}
+
+.course-image div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 19px;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 19px;
+  color: #c4c4c4;
+  gap: 5px;
+  margin-bottom: 30px;
+}
+
+.course-container {
+  position: relative;
+  width: 540.51px;
+  height: auto;
+}
