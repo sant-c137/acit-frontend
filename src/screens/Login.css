@@ -56,7 +56,7 @@ form {
   background: linear-gradient(293.42deg, #fdfeff 10.12%, #ffffff 93.81%);
   border: 1px solid rgba(16, 36, 71, 0.14);
   border-radius: 12px;
-  transform: matrix(-1, 0, 0, 1, 0, 0);
+  /* transform: matrix(-1, 0, 0, 1, 0, 0); */
 
   font-family: 'Cairo Variable', sans-serif;
 

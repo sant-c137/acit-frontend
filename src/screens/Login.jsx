@@ -3,71 +3,56 @@ import { Footer } from '../components/Footer';
 import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
+import { StudentDashboard } from './StudentDashboard';
+import { Home } from './Home';
 
 export const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const { t } = useTranslation('global');
 
-  const log = async (e) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [loginSuccessful, setLoginSuccessful] = useState(false)
+
+  const handleLogin = (e) => {
     e.preventDefault();
 
-    /*      await axios.post('http://127.0.0.1:8000/api/login',{'email':email,'password':password}).then((res)=>console.log(res));
-
-    }
-    useEffect(()=>{log()},[])*/
-    try {
-      const response = await axios.post(
-        'http://26.95.135.143:8000/api/login',
-        {
-          email: email,
-          password: password,
-        }
-      );
-
-      if (response.status === 200) {
-        window.location.pathname = 'dashboard';
-      }
-
-      // Assuming the server returns a token upon successful login
-      const token = response.data.authorisation.token;
-
-      // Save the token to localStorage
-      // localStorage.setItem('authToken', token);
-
-      //save in cookies
-      // Cookie.setItem('authToken',token)
-      Cookies.set('token', token, { expires: 365 });
-
-      console.log('Login successful');
-    } catch (error) {
-      console.error('Login failed', error.response.data);
-    }
-  };
-  useEffect(() => {
-    log();
-  }, []);
-
-  // Save the token to localStorage
-
-  useEffect(() => {
-    const pass = document.getElementById('password');
-    const icon = document.querySelector('.icon');
-
-    icon.addEventListener('click', () => {
-      if (pass.type === 'password') {
-        pass.type = 'text';
-      } else {
-        pass.type = 'password';
-      }
-    });
-
-    return () => {
-      icon.removeEventListener('click', () => {});
+    const data = {
+      username: username,
+      password: password,
     };
-  }, []);
+
+    fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+
+        console.log(result.token);
+
+
+        if (result.token) {
+          localStorage.setItem('token', result.token);
+          setLoginSuccessful(true)
+        } 
+
+        // Redirection
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    console.log(data);
+  };
 
   return (
-    <>
+    <>{
+      loginSuccessful ? <StudentDashboard/> : <>
+    
       <div className="header-container">
         <Header />
       </div>
@@ -79,58 +64,57 @@ export const Login = () => {
           className="decoration-lines-r"
         />
         <div className="login-container">
-          <h1>تسجيل الدخول</h1>
+          <h1>{t('login.title')}</h1>
           <br />
           <br />
-
-          <form onSubmit={(e) => log(e)}>
+          <form>
             <input
               type="text"
-              placeholder="البريد الالكتروني"
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder={t('login.emailPlaceholder')}
+              onChange={(event) => setUsername(event.target.value)}
             />
-
             <br />
             <br />
-
             <div className="show-password">
-              <img src="/Eye.svg" alt="" className="icon" />
+              {/* <img src="/Eye.svg" alt="" className="icon" /> */}
               <input
                 type="password"
-                placeholder="كلمة المرور "
+                placeholder={t('login.passwordPlaceholder')}
                 maxLength="30"
                 id="password"
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(event) => setPassword(event.target.value)}
               />
               {/* <img src="/EyeClosed.svg" alt="" /> */}
             </div>
           </form>
-
           <div className="forgot-show-password">
-            <a href="">هل نسيت كلمة السر ؟</a>
-
+            <a href="">{t('login.forgotPassword')}</a>
             <div className="stay-logged-in">
-              <h2>أبق تسجيل دخولي</h2>
+              <h2>{t('login.stayLoggedIn')}</h2>
               <input type="checkbox" className="checkbox" />
             </div>
           </div>
           <br />
           <br />
-
-          <button type="submit" className="sing-in-btn">
-            تسجيل الدخول
+          <button type="submit" className="sing-in-btn" onClick={handleLogin}>
+            {t('login.signIn')}
           </button>
-
           <div className="separation-line">
             <hr />
-            <h6>او</h6>
+            <h6>{t('login.or')}</h6>
             <hr />
           </div>
-          <button className="create-account-sign-in">انشاء حساب</button>
+          <button className="create-account-sign-in">
+            {t('login.createAccount')}
+          </button>
         </div>
       </section>
-
       <Footer />
-    </>
+
+      </>
+    }
+    </> 
+
   );
+
 };

@@ -39,7 +39,7 @@ export const Header = () => {
       <nav className="header-sections">
         <ul>
           <li className="Hola">
-            <Link to="/home">{t('header.home')}</Link>
+            <Link to="/acit-frontend/">{t('header.home')}</Link>
           </li>
           <li>
             <Link to="/courses">{t('header.courses')}</Link>
