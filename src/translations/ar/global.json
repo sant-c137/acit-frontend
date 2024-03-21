@@ -43,5 +43,32 @@
     "professionals": "متدرب محترف",
     "accredited-courses": "دورة معتمدة",
     "training-sessions": "جلسة تدريبية"
+  },
+  "login": {
+    "title": "تسجيل الدخول",
+    "emailPlaceholder": "البريد الالكتروني",
+    "passwordPlaceholder": "كلمة المرور",
+    "forgotPassword": "هل نسيت كلمة السر ؟",
+    "stayLoggedIn": "أبق تسجيل دخولي",
+    "signIn": "تسجيل الدخول",
+    "or": "او",
+    "createAccount": "انشاء حساب"
+  },
+
+  "createAccount": {
+    "title": "سجل بياناتك لإنشاء حساب",
+    "fullNameEnglish": "الاسم الرباعي بالانكليزي*",
+    "phone": "الهاتف",
+    "gender": "الجنس",
+    "city": "مدينة*",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "fullNameArabic": "الاسم الرباعي بالعربي*",
+    "email": "البريد الإلكتروني*",
+    "birthDate": "تاريخ الميلاد",
+    "education": "المؤهل العلمي",
+    "password": "كلمة المرور",
+    "createAccountButton": "إنشاء حساب",
+    "or": "او",
+    "signInButton": "تسجيل الدخول"
   }
 }

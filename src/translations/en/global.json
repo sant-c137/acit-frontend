@@ -43,5 +43,33 @@
     "professionals": "Professional Trainees",
     "accredited-courses": "Accredited Courses",
     "training-sessions": "Training Sessions"
+  },
+
+  "login": {
+    "title": "Login",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Password",
+    "forgotPassword": "Forgot Password?",
+    "stayLoggedIn": "Keep me logged in",
+    "signIn": "Sign In",
+    "or": "or",
+    "createAccount": "Create Account"
+  },
+
+  "createAccount": {
+    "title": "Register your data to create an account",
+    "fullNameEnglish": "Full Name in English*",
+    "phone": "Phone",
+    "gender": "Gender",
+    "city": "City*",
+    "confirmPassword": "Confirm Password",
+    "fullNameArabic": "Full Name in Arabic*",
+    "email": "Email*",
+    "birthDate": "Birth Date",
+    "education": "Educational Qualification",
+    "password": "Password",
+    "createAccountButton": "Create Account",
+    "or": "or",
+    "signInButton": "Sign In"
   }
 }
