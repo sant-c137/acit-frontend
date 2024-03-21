@@ -41,87 +41,61 @@
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: row-reverse;
+}
+.formulary span {
+  color: red;
 }
 
-.formulary-left {
-  display: flex;
-  flex-direction: column;
-  /* width: 45%; */
-  min-width: 250px;
-  /* max-width: 370px;
-  width: 100%; */
-
-  flex-grow: 1;
-
-  font-style: normal;
-  font-weight: 800;
-  font-size: 12px;
-  line-height: 35px;
-  text-align: right;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: #1a457b;
-}
-
+.formulary-left,
 .formulary-right {
   display: flex;
   flex-direction: column;
   min-width: 250px;
-  /* width: 45%; */
-  /* max-width: 370px;
-  width: 100%; */
   flex-grow: 1;
-
   font-style: normal;
   font-weight: 800;
   font-size: 12px;
   line-height: 35px;
-  text-align: right;
+  text-align: left;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #1a457b;
 }
 
-.formulary-left input {
-  width: 100%;
+.formulary-left input,
+.formulary-right input {
+  /* width: 100%; */
   border: 1px solid black;
   height: 52px;
+
+  max-width: 370px;
 
   box-sizing: border-box;
 
   background: linear-gradient(293.42deg, #fdfeff 10.12%, #ffffff 93.81%);
   border: 1px solid rgba(16, 36, 71, 0.14);
   border-radius: 12px;
-  transform: matrix(-1, 0, 0, 1, 0, 0);
 
-  font-family: "Cairo Variable", sans-serif;
+  font-family: 'Cairo Variable', sans-serif;
 
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
   color: #6f6c90;
   padding: 0px 20px;
+  border-width: 2px;
+  text-align: left;
 }
 
-.formulary-right input {
-  width: 100%;
-  border: 1px solid black;
-  height: 52px;
+.formulary-left input:focus,
+.formulary-right input:focus {
+  border-color: #33ff00 !important;
+}
 
-  box-sizing: border-box;
-
-  background: linear-gradient(293.42deg, #fdfeff 10.12%, #ffffff 93.81%);
-  border: 1px solid rgba(16, 36, 71, 0.14);
-  border-radius: 12px;
-  transform: matrix(-1, 0, 0, 1, 0, 0);
-
-  font-family: "Cairo Variable", sans-serif;
-
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 20px;
-  color: #6f6c90;
-  padding: 0px 20px;
+.formulary-left input:invalid,
+.formulary-right input:invalid {
+  border-color: red;
 }
 
 .create-account-btn {
@@ -131,6 +105,15 @@
 
   background: #39c0c0;
   border-radius: 50px;
+
+  width: 266px;
+  height: 52px;
+  border-radius: 50px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 9px;
+  letter-spacing: 0.02em;
 }
 
 .sign-in-btn {

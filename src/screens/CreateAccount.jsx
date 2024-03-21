@@ -2,16 +2,16 @@ import { useTranslation } from 'react-i18next';
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { useForm } from "react-hook-form";
-import { useState } from 'react'; // Importar useState
+import { useState } from 'react';
 import "./CreateAccount.css";
 
 export const CreateAccount = () => {
   const { t } = useTranslation('global');
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const [formData, setFormData] = useState(null); // Estado para almacenar los datos del formulario
+  const [formData, setFormData] = useState(null);
 
   const onSubmit = data => {
-    setFormData(data); // Actualizar el estado con los datos del formulario
+    setFormData(data);
     console.log(data);
   };
 
@@ -29,32 +29,40 @@ export const CreateAccount = () => {
           <br />
           <form onSubmit={handleSubmit(onSubmit)} className="formulary">
             <div className="formulary-left">
-              <p>{t('createAccount.fullNameEnglish')}</p>
-              <input type="text" {...register("fullNameEn", { required: true })} />
+              <label htmlFor="fullNameEn">{t('createAccount.fullNameEnglish')}</label>
+              <input type="text" id="fullNameEn" {...register("fullNameEn", { required: true })} />
               {errors.fullNameEn && <span>{t('common.fieldRequired')}</span>}
-              <p>{t('createAccount.phone')}</p>
-              <input type="text" {...register("phone")} />
-              <p>{t('createAccount.gender')}</p>
-              <input type="text" {...register("gender")} />
-              <p>{t('createAccount.city')}</p>
-              <input type="text" {...register("city", { required: true })} />
+
+              <label htmlFor="phone">{t('createAccount.phone')}</label>
+              <input type="tel" id="phone" {...register("phone")} />
+
+              <label htmlFor="gender">{t('createAccount.gender')}</label>
+              <input type="text" id="gender" {...register("gender")} />
+
+              <label htmlFor="city">{t('createAccount.city')}</label>
+              <input type="text" id="city" {...register("city", { required: true })} />
               {errors.city && <span>{t('common.fieldRequired')}</span>}
-              <p>{t('createAccount.confirmPassword')}</p>
-              <input type="password" {...register("confirmPassword")} />
+
+              <label htmlFor="confirmPassword">{t('createAccount.confirmPassword')}</label>
+              <input type="password" id="confirmPassword" {...register("confirmPassword")} />
             </div>
             <div className="formulary-right">
-              <p>{t('createAccount.fullNameArabic')}</p>
-              <input type="text" {...register("fullNameAr", { required: true })} />
+              <label htmlFor="fullNameAr">{t('createAccount.fullNameArabic')}</label>
+              <input type="text" id="fullNameAr" {...register("fullNameAr", { required: true })} />
               {errors.fullNameAr && <span>{t('common.fieldRequired')}</span>}
-              <p>{t('createAccount.email')}</p>
-              <input type="email" {...register("email", { required: true })} />
+
+              <label htmlFor="email">{t('createAccount.email')}</label>
+              <input type="email" id="email" {...register("email", { required: true })} />
               {errors.email && <span>{t('common.fieldRequired')}</span>}
-              <p>{t('createAccount.birthDate')}</p>
-              <input type="date" {...register("birthDate")} />
-              <p>{t('createAccount.education')}</p>
-              <input type="text" {...register("education")} />
-              <p>{t('createAccount.password')}</p>
-              <input type="password" {...register("password", { required: true })} />
+
+              <label htmlFor="birthDate">{t('createAccount.birthDate')}</label>
+              <input type="date" id="birthDate" {...register("birthDate")} />
+
+              <label htmlFor="education">{t('createAccount.education')}</label>
+              <input type="text" id="education" {...register("education")} />
+
+              <label htmlFor="password">{t('createAccount.password')}</label>
+              <input type="password" id="password" {...register("password", { required: true })} />
               {errors.password && <span>{t('common.fieldRequired')}</span>}
             </div>
           </form>
@@ -73,7 +81,6 @@ export const CreateAccount = () => {
         </div>
       </section>
       <Footer />
-
       {/* Mostrar datos del formulario en formato JSON */}
       {formData && (
         <div>
