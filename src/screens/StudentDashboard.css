@@ -1,0 +1,161 @@
+.student-dashboard-container {
+  background: linear-gradient(
+    110.23deg,
+    rgba(255, 255, 255, 0.5) -48.01%,
+    rgba(131, 221, 255, 0.5) 371.76%
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 60px 0px;
+}
+
+.student-dashboard-account-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 340px;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 24px rgba(9, 95, 144, 0.1);
+  border-radius: 24px;
+  padding: 40px 0px;
+}
+
+.student-dashboard-account-info img {
+  height: 130px;
+}
+
+.student-dashboard-account-info h1 {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.student-dashboard-account-info strong {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 22px;
+  color: #095f90;
+}
+
+.student-dashboard-account-info h2 {
+  width: 135px;
+  height: 43px;
+  background: #13a3d9;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+  color: #ffffff;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.student-dashboard-account-info a {
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
+  text-decoration-line: underline;
+  color: rgba(9, 95, 144, 0.51);
+}
+
+.student-dashboard-account-info-2 {
+  padding: 40px;
+  background: #ffffff;
+  box-shadow: 0px 4px 24px rgba(9, 95, 144, 0.1);
+  border-radius: 24px;
+}
+
+.student-dashboard-account-info-2 h1 {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 9px;
+  color: #13a3d9;
+}
+
+.student-dashboard-account-info-online-courses {
+  border: 1px solid #13a3d9;
+  border-radius: 10px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 9px;
+  color: #095f90;
+
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: 177px;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 15px 20px;
+  text-align: center;
+  border-bottom: 1px solid #a77c2736;
+}
+
+.custom-table th {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  color: rgba(9, 95, 144, 0.87);
+}
+
+.custom-table td {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 19px;
+  color: #095f90;
+}
+
+.btn-lectures {
+  height: 28px;
+  background: #13a3d9;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 9px;
+  color: #ffffff;
+  border: none;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-status {
+  color: #09a449;
+}
+
+.s-d-join-course {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.s-d-join-course a {
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
+  text-decoration-line: underline;
+  color: #095f90;
+}

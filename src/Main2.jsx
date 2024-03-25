@@ -2,11 +2,14 @@ import { StudentDashboard } from './screens/StudentDashboard';
 import { Login } from './screens/Login';
 
 function parseJwt(token) {
+  if (!token || typeof token !== 'string') {
+    return null;
+  }
+
   const base64Url = token.split('.')[1];
   const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
   const jsonPayload = decodeURIComponent(
-    window
-      .atob(base64)
+    window.atob(base64)
       .split('')
       .map(function (c) {
         return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
@@ -16,12 +19,14 @@ function parseJwt(token) {
   return JSON.parse(jsonPayload);
 }
 
-let tokenExistAndStillValid =(
-  parseJwt(localStorage.getItem('token')).exp * 1000 > Date.now());
-
-
 export const Main2 = () => {
-  console.log(tokenExistAndStillValid);
+  let tokenExistAndStillValid = false;
+  const token = localStorage.getItem('token');
+  if (token) {
+    const parsedToken = parseJwt(token);
+    tokenExistAndStillValid = parsedToken && parsedToken.exp * 1000 > Date.now();
+  }
 
+  console.log(tokenExistAndStillValid);
   return <>{tokenExistAndStillValid ? <StudentDashboard /> : <Login />}</>;
 };

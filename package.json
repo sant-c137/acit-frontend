@@ -5,7 +5,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "predeploy": "pnpm run build",
     "deploy": "gh-pages -d build",
     "build": "vite build",
@@ -35,6 +35,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "gh-pages": "^6.1.1",
-    "vite": "^5.1.4"
+    "vite": "^5.2.3"
   }
 }

@@ -56,7 +56,6 @@ form {
   background: linear-gradient(293.42deg, #fdfeff 10.12%, #ffffff 93.81%);
   border: 1px solid rgba(16, 36, 71, 0.14);
   border-radius: 12px;
-  /* transform: matrix(-1, 0, 0, 1, 0, 0); */
 
   font-family: 'Cairo Variable', sans-serif;
 
@@ -68,6 +67,66 @@ form {
 
   padding: 0px 20px;
 }
+
+/* .login-container form input:invalid {
+  border: 2px solid red;
+  color: red;
+} */
+
+/* input.invalid {
+  border: 2px solid red;
+  color: red;
+} */
+
+/* input {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+} */
+
+
+/* #email {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+#email.invalid {
+  border-color: #ff0000;
+  animation: shake 0.2s ease-in-out;
+} */
+
+
+
+
+#email.invalid {
+  border: 2px solid red;
+  animation: shake 0.2s ease-in-out;
+
+}
+
+#password.invalid {
+  border: 2px solid red;
+  animation: shake 0.2s ease-in-out;
+}
+
+
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/*.login-container form input:valid {
+  border: 2px solid #109868;
+  color: #109868;
+} */
 
 .forgot-show-password {
   display: flex;
@@ -127,6 +186,15 @@ form {
   line-height: 9px;
   letter-spacing: 0.02em;
   color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.sing-in-btn:hover {
+  background: #fff;
+  color: #14bcfb;
+  border: 3px solid #14bcfb;
+
+  transform: scale(1.01);
 }
 
 .separation-line {
@@ -162,7 +230,6 @@ form {
   left: 510px;
   background: #fff;
   border-radius: 50px;
-  border: none;
   font-family: inherit;
   font-style: normal;
   font-weight: 700;
@@ -173,6 +240,13 @@ form {
   border: 3px solid #39c0c0;
   border-radius: 50px;
   color: #14bcfb;
+  transition: all 0.3s ease;
+}
+
+.create-account-sign-in:hover {
+  background: #39c0c0;
+  color: #fff;
+  transform: scale(1.05);
 }
 
 .decoration-lines {

@@ -9,18 +9,23 @@ import { Header } from '../components/Header';
 import { Login } from '../screens/Login';
 import {Main2} from '../Main2'
 import './Login.css';
+import { StudentDashboard } from './StudentDashboard';
+import {UpdateUserForm} from '../components/UpdateUserForm'
 
 export const Home = () => {
   return (
     <>
-      {/* <AcitMainContent />
+      <AcitMainContent />
       <AcitCourseListing />
       <AcitOpinionsStudents />
       <AcitBlogArticles />
       <AcitMissionVision />
-      <Footer /> */}
-
+      <Footer />
       <Main2/>
+
+      <UpdateUserForm/>
+
+      {/* <StudentDashboard/> */}
     </>
   );
 };

@@ -37,20 +37,6 @@
 
 .formulary {
   display: flex;
-  gap: 40px;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex-direction: row-reverse;
-}
-.formulary span {
-  color: red;
-}
-
-.formulary-left,
-.formulary-right {
-  display: flex;
-  flex-direction: column;
   min-width: 250px;
   flex-grow: 1;
   font-style: normal;
@@ -61,24 +47,32 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #1a457b;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-.formulary-left input,
-.formulary-right input {
-  /* width: 100%; */
+.error {
+  color: red;
+}
+
+.formulary div {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 600px;
+  justify-content: center;
+}
+
+.formulary input {
   border: 1px solid black;
   height: 52px;
-
   max-width: 370px;
-
   box-sizing: border-box;
-
   background: linear-gradient(293.42deg, #fdfeff 10.12%, #ffffff 93.81%);
   border: 1px solid rgba(16, 36, 71, 0.14);
   border-radius: 12px;
-
   font-family: 'Cairo Variable', sans-serif;
-
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
@@ -88,15 +82,35 @@
   text-align: left;
 }
 
-.formulary-left input:focus,
-.formulary-right input:focus {
+.formulary select {
+  height: 52px;
+  max-width: 370px;
+  box-sizing: border-box;
+  background: linear-gradient(293.42deg, #fdfeff 10.12%, #ffffff 93.81%);
+  border: 1px solid rgba(16, 36, 71, 0.14);
+  border-radius: 12px;
+  font-family: 'Cairo Variable', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #6f6c90;
+  padding: 0px 20px;
+  border-width: 2px;
+  text-align: left;
+  padding-right: 40px;
+}
+
+.formulary input:focus {
   border-color: #33ff00 !important;
 }
 
-.formulary-left input:invalid,
-.formulary-right input:invalid {
+.formulary input:invalid {
   border-color: red;
 }
+
+/* .formulary input:valid {
+  border-color: rgb(255, 221, 0);
+} */
 
 .create-account-btn {
   width: 266px;

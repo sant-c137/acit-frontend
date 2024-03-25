@@ -1,120 +1,193 @@
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { useState, useEffect } from 'react';
-import Cookies from 'js-cookie';
-import axios from 'axios';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { StudentDashboard } from './StudentDashboard';
-import { Home } from './Home';
 
 export const Login = () => {
   const { t } = useTranslation('global');
 
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loginSuccessful, setLoginSuccessful] = useState(false)
+  const [loginSuccessful, setLoginSuccessful] = useState({
+    success: true,
+    email: '',
+  });
+
+  const [errors, setErrors] = useState({});
+  const [backendError, setBackendError] = useState('');
+  const [emailInput, setEmailInput] = useState('');
+  const [passwordInput, setPasswordInput] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    const data = {
-      username: username,
-      password: password,
-    };
+    setBackendError('');
 
-    fetch('http://localhost:3000/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((result) => {
+    const validationErrors = {};
+    const emailInput = document.getElementById('email');
+    setEmailInput(emailInput);
+    const passwordInput = document.getElementById('password');
+    setPasswordInput(passwordInput);
 
-        console.log(result.token);
+    const emailRegex = /^\S+@\S+\.\S+$/;
 
+    if (!email.trim()) {
+      validationErrors.email = 'email is required';
+      emailInput.classList.add('invalid');
+    } else if (!emailRegex.test(email.trim())) {
+      validationErrors.email = 'Invalid email format';
+      emailInput.classList.add('invalid');
+    }
 
-        if (result.token) {
-          localStorage.setItem('token', result.token);
-          setLoginSuccessful(true)
-        } 
+    if (!password.trim()) {
+      validationErrors.password = 'Password is required';
+      passwordInput.classList.add('invalid');
+    }
 
-        // Redirection
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      const data = {
+        email: email,
+        password: password,
+      };
+
+      fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       })
-      .catch((error) => {
-        console.log(error);
-      });
+        .then((response) => {
+          console.log('Estado de la respuesta:', response.status);
+          return response.json();
+        })
 
-    console.log(data);
+        .then((result) => {
+          console.log('Resultado:', result);
+          if (result.token) {
+            localStorage.setItem('token', result.token);
+            localStorage.setItem('email', result.email);
+            localStorage.setItem('username', result.username);
+            localStorage.setItem('id', result.id);
+
+            setLoginSuccessful({
+              success: false,
+              email: result.email,
+              id: result.id,
+              username: result.username,
+            });
+          } else if (result.message) {
+            setBackendError(result.message);
+            if (result.message.includes('email')) {
+              emailInput.classList.add('backend-error');
+            } else {
+              passwordInput.classList.add('backend-error');
+            }
+          }
+        })
+        .catch((error) => {
+          console.error('Error al realizar la solicitud:', error);
+          alert('Ha ocurrido un error al intentar iniciar sesión.');
+        });
+    }
   };
 
   return (
-    <>{
-      loginSuccessful ? <StudentDashboard/> : <>
-    
-      <div className="header-container">
-        <Header />
-      </div>
-      <section className="section-login">
-        <img src="/DecorationLines.svg" alt="" className="decoration-lines" />
-        <img
-          src="/DecorationLinesR.svg"
-          alt=""
-          className="decoration-lines-r"
-        />
-        <div className="login-container">
-          <h1>{t('login.title')}</h1>
-          <br />
-          <br />
-          <form>
-            <input
-              type="text"
-              placeholder={t('login.emailPlaceholder')}
-              onChange={(event) => setUsername(event.target.value)}
+    <>
+      {!loginSuccessful.success ? (
+        <StudentDashboard />
+      ) : (
+        <>
+          <div className="header-container">
+            <Header />
+          </div>
+          <section className="section-login">
+            <img
+              src="/DecorationLines.svg"
+              alt=""
+              className="decoration-lines"
             />
-            <br />
-            <br />
-            <div className="show-password">
-              {/* <img src="/Eye.svg" alt="" className="icon" /> */}
-              <input
-                type="password"
-                placeholder={t('login.passwordPlaceholder')}
-                maxLength="30"
-                id="password"
-                onChange={(event) => setPassword(event.target.value)}
-              />
-              {/* <img src="/EyeClosed.svg" alt="" /> */}
-            </div>
-          </form>
-          <div className="forgot-show-password">
-            <a href="">{t('login.forgotPassword')}</a>
-            <div className="stay-logged-in">
-              <h2>{t('login.stayLoggedIn')}</h2>
-              <input type="checkbox" className="checkbox" />
-            </div>
-          </div>
-          <br />
-          <br />
-          <button type="submit" className="sing-in-btn" onClick={handleLogin}>
-            {t('login.signIn')}
-          </button>
-          <div className="separation-line">
-            <hr />
-            <h6>{t('login.or')}</h6>
-            <hr />
-          </div>
-          <button className="create-account-sign-in">
-            {t('login.createAccount')}
-          </button>
-        </div>
-      </section>
-      <Footer />
+            <img
+              src="/DecorationLinesR.svg"
+              alt=""
+              className="decoration-lines-r"
+            />
+            <div className="login-container">
+              <h1>{t('login.title')}</h1>
+              <br />
+              <br />
+              <form>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  pattern="\S+@\S+\.\S+"
+                  placeholder={t('login.emailPlaceholder')}
+                  onChange={(event) => setEmail(event.target.value)}
+                  autoComplete="on"
+                  required
+                />
+                {errors.email && (
+                  <small className="error">{errors.email}</small>
+                )}
+                <br />
+                <br />
+                <div className="show-password">
+                  <input
+                    type="password"
+                    placeholder={t('login.passwordPlaceholder')}
+                    maxLength="30"
+                    minLength="6"
+                    id="password"
+                    onChange={(event) => setPassword(event.target.value)}
+                    required
+                  />
+                  {errors.password && password.trim().length >= 0 && (
+                    <small className="error">{errors.password}</small>
+                  )}
 
-      </>
-    }
-    </> 
-
+                  {backendError && (
+                    <>
+                      <small className="error">{backendError}</small>
+                      {(() => {
+                        emailInput.classList.add('invalid');
+                        passwordInput.classList.add('invalid');
+                      })()}
+                    </>
+                  )}
+                </div>
+              </form>
+              <br />
+              <div className="forgot-show-password">
+                <a href="">{t('login.forgotPassword')}</a>
+                <div className="stay-logged-in">
+                  <h2>{t('login.stayLoggedIn')}</h2>
+                  <input type="checkbox" className="checkbox" />
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="sing-in-btn"
+                onClick={handleLogin}
+              >
+                {t('login.signIn')}
+              </button>
+              <div className="separation-line">
+                <hr />
+                <h6>{t('login.or')}</h6>
+                <hr />
+              </div>
+              <button className="create-account-sign-in">
+                {t('login.createAccount')}
+              </button>
+            </div>
+          </section>
+          <Footer />
+        </>
+      )}
+    </>
   );
-
 };
