@@ -1,0 +1,82 @@
+.form-edit-account {
+  display: flex;
+  flex-direction: column;
+  max-width: 625px;
+  background-color: white;
+  align-items: center;
+
+  box-shadow: 0px 4px 24px 0px #095f902e;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 4% 6%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 70px 0px;
+}
+
+.img-edit-account {
+  width: 103px;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  border: 1px solid black;
+
+}
+
+.input-edit-account  {
+  height: 52px;
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(293.42deg, #fdfeff 10.12%, #ffffff 93.81%);
+  border: 1px solid rgba(16, 36, 71, 0.14);
+  border-radius: 12px;
+  font-family: 'Cairo Variable', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #6f6c90;
+  padding: 0px 20px;
+  margin: 10px 0px;
+  border-width: 2px;
+  text-align: left;
+}
+
+.button-edit-account {
+  margin-top: 15px;
+  min-width: 265px;
+  height: 52px;
+  background: #14bcfb;
+  border-radius: 50px;
+  border: none;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 9px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.img-container-edit-account {
+  display: flex;
+  align-items: flex-end;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: right;
+  color: #6f6c90;
+}
+
+.img-container-edit-account:hover {
+  text-decoration: underline;
+}
+
+
+.upload-edit-account {
+  border: none;
+  background-color: none;
+  appearance: none;
+
+}

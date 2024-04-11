@@ -16,7 +16,7 @@
     "@fontsource-variable/cairo": "^5.0.19",
     "@fontsource/poppins": "^5.0.12",
     "@fontsource/tajawal": "^5.0.12",
-    "axios": "^1.6.7",
+    "axios": "^1.6.8",
     "i18next": "^23.10.1",
     "js-cookie": "^3.0.5",
     "prop-types": "^15.8.1",

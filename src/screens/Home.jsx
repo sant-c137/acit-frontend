@@ -11,6 +11,7 @@ import {Main2} from '../Main2'
 import './Login.css';
 import { StudentDashboard } from './StudentDashboard';
 import {UpdateUserForm} from '../components/UpdateUserForm'
+import { EditAccount } from './EditAccount';
 
 export const Home = () => {
   return (
@@ -22,10 +23,11 @@ export const Home = () => {
       <AcitMissionVision />
       <Footer />
       <Main2/>
-
-      <UpdateUserForm/>
+      {/* <UpdateUserForm/> */}
 
       {/* <StudentDashboard/> */}
+
+      {/* <EditAccount></EditAccount> */}
     </>
   );
 };

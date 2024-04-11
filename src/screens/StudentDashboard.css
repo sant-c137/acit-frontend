@@ -28,6 +28,8 @@
 
 .student-dashboard-account-info img {
   height: 130px;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
 }
 
 .student-dashboard-account-info h1 {

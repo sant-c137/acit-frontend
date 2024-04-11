@@ -21,6 +21,8 @@ import { Login } from './screens/Login';
 import { CreateAccount } from './screens/CreateAccount';
 import { NotFoundPage } from './screens/NotFoundPage';
 import { Main2 } from './Main2';
+import { EditAccount } from './screens/EditAccount';
+import { StudentDashboard } from './screens/StudentDashboard';
 
 function App() {
   return (
@@ -37,6 +39,9 @@ function App() {
           element={<AccreditationsAndPartners />}
         />
         <Route path="/call-us" element={<CallUs />} />
+        <Route path="/dashboard/edit-account" element={<EditAccount />} />
+        <Route path="/dashboard" element={<Main2 />} />
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>

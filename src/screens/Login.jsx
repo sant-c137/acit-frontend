@@ -1,8 +1,9 @@
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { StudentDashboard } from './StudentDashboard';
+import { Link } from 'react-router-dom';
 
 export const Login = () => {
   const { t } = useTranslation('global');
@@ -19,8 +20,14 @@ export const Login = () => {
   const [emailInput, setEmailInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
 
+  const [isLoading, setIsLoading] = useState(false);
+  const btnRef = useRef(null);
+  const spinnerRef = useRef(null);
+
   const handleLogin = (e) => {
     e.preventDefault();
+
+    setIsLoading(true);
 
     setBackendError('');
 
@@ -35,14 +42,17 @@ export const Login = () => {
     if (!email.trim()) {
       validationErrors.email = 'email is required';
       emailInput.classList.add('invalid');
+      setIsLoading(false);
     } else if (!emailRegex.test(email.trim())) {
       validationErrors.email = 'Invalid email format';
       emailInput.classList.add('invalid');
+      setIsLoading(false);
     }
 
     if (!password.trim()) {
       validationErrors.password = 'Password is required';
       passwordInput.classList.add('invalid');
+      setIsLoading(false);
     }
 
     setErrors(validationErrors);
@@ -79,8 +89,11 @@ export const Login = () => {
               id: result.id,
               username: result.username,
             });
+            setIsLoading(false);
           } else if (result.message) {
             setBackendError(result.message);
+            setIsLoading(false);
+
             if (result.message.includes('email')) {
               emailInput.classList.add('backend-error');
             } else {
@@ -91,6 +104,7 @@ export const Login = () => {
         .catch((error) => {
           console.error('Error al realizar la solicitud:', error);
           alert('Ha ocurrido un error al intentar iniciar sesión.');
+          setIsLoading(false);
         });
     }
   };
@@ -168,21 +182,36 @@ export const Login = () => {
                   <input type="checkbox" className="checkbox" />
                 </div>
               </div>
+
               <button
                 type="submit"
-                className="sing-in-btn"
+                className={`sing-in-btn ${isLoading ? 'loading' : ''}`}
                 onClick={handleLogin}
+                ref={btnRef}
               >
-                {t('login.signIn')}
+                {isLoading ? (
+                  <img
+                    src="BlueLoader.svg"
+                    alt=""
+                    className="login-loader loader-checked"
+                    ref={spinnerRef}
+                  />
+                ) : (
+                  t('login.signIn')
+                )}
               </button>
+
               <div className="separation-line">
                 <hr />
                 <h6>{t('login.or')}</h6>
                 <hr />
               </div>
-              <button className="create-account-sign-in">
-                {t('login.createAccount')}
-              </button>
+
+              <Link to="/create-account" className='login-link-to-create-account'>
+                <button className="create-account-sign-in">
+                  {t('login.createAccount')}
+                </button>
+              </Link>
             </div>
           </section>
           <Footer />
