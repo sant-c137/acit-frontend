@@ -1,3 +1,5 @@
+import './Course.css';
+
 export const Course = ({
   name,
   startDate,

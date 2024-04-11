@@ -1,3 +1,4 @@
+import './AcitMissionVision.css';
 import { MissionVision } from "./MissionVision";
 
 export const AcitMissionVision = () => {

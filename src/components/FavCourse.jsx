@@ -1,3 +1,5 @@
+import './FavCourse.css';
+
 export const FavCourse = () => {
   return (
     <>

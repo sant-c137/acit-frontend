@@ -1,3 +1,5 @@
+import './MissionVision.css';
+
 export const MissionVision = () => {
   return (
     <>

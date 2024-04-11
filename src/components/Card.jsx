@@ -1,3 +1,5 @@
+import './Card.css';
+
 export const Card = ({ title, numOfCourses, cardKey}) => {
   const colors = {
     background1: "#4583832B",

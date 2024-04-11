@@ -1,3 +1,4 @@
+import './AcitBlogArticles.css';
 import { FavCourse } from "../components/FavCourse";
 
 export const AcitBlogArticles = () => {

@@ -1,3 +1,5 @@
+import './AcitOpinionsStudents.css';
+
 export const AcitOpinionsStudents = () => {
   return (
     <>

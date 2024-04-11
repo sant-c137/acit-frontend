@@ -1,3 +1,4 @@
+import './AcitCourseListing.css';
 import { Course } from "../components/Course";
 import { Card } from "../components/Card";
 import { useState, useEffect } from "react";
