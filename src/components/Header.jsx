@@ -38,7 +38,7 @@ export const Header = () => {
       </div>
       <nav className="header-sections">
         <ul>
-          <li className="Hola">
+          {/* <li >
             <Link to="/">{t('header.home')}</Link>
           </li>
           <li>
@@ -47,13 +47,25 @@ export const Header = () => {
           <li>
             <Link to="/articles">{t('header.articles')}</Link>
           </li>
+
           <li>
             <Link to="/accreditations-and-partners">
               {t('header.accreditations-partners')}
             </Link>
-          </li>
+          </li> 
           <li>
             <Link to="/call-us">{t('header.call-us')}</Link>
+          </li>
+        */}
+        <li>
+            <Link to="/">Home</Link>
+          </li>
+
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/dashboard/edit-account">Edit Dashboard</Link>
           </li>
         </ul>
       </nav>

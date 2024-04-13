@@ -2,18 +2,16 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { StudentDashboard } from './StudentDashboard';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { useAuth } from '../auth/AuthProvider';
 
 export const Login = () => {
   const { t } = useTranslation('global');
 
+  const { isAuthenticated, updateAuthStatus } = useAuth();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loginSuccessful, setLoginSuccessful] = useState({
-    success: true,
-    email: '',
-  });
 
   const [errors, setErrors] = useState({});
   const [backendError, setBackendError] = useState('');
@@ -78,17 +76,12 @@ export const Login = () => {
         .then((result) => {
           console.log('Resultado:', result);
           if (result.token) {
-            localStorage.setItem('token', result.token);
-            localStorage.setItem('email', result.email);
-            localStorage.setItem('username', result.username);
-            localStorage.setItem('id', result.id);
+            sessionStorage.setItem('token', result.token);
+            sessionStorage.setItem('email', result.email);
+            sessionStorage.setItem('username', result.username);
+            sessionStorage.setItem('id', result.id);
 
-            setLoginSuccessful({
-              success: false,
-              email: result.email,
-              id: result.id,
-              username: result.username,
-            });
+            updateAuthStatus(true);
             setIsLoading(false);
           } else if (result.message) {
             setBackendError(result.message);
@@ -111,8 +104,8 @@ export const Login = () => {
 
   return (
     <>
-      {!loginSuccessful.success ? (
-        <StudentDashboard />
+      {isAuthenticated ? (
+        <Navigate to="/dashboard" replace />
       ) : (
         <>
           <div className="header-container">
@@ -207,7 +200,10 @@ export const Login = () => {
                 <hr />
               </div>
 
-              <Link to="/create-account" className='login-link-to-create-account'>
+              <Link
+                to="/create-account"
+                className="login-link-to-create-account"
+              >
                 <button className="create-account-sign-in">
                   {t('login.createAccount')}
                 </button>

@@ -12,7 +12,7 @@ export const StudentDashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const id_student = localStorage.getItem('id');
+        const id_student = sessionStorage.getItem('id');
         const url = `http://localhost:3000/dashboard?id=${id_student}`;
         const response = await axios.get(url);
         setUserData(response.data);
