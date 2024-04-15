@@ -1,60 +1,117 @@
-import { Courses } from './screens/Courses';
-import { Articles } from './screens/Articles';
-import { AccreditationsAndPartners } from './screens/AccreditationsAndPartners';
-import { CallUs } from './screens/CallUs';
-import { Home } from './screens/Home';
-import { Login } from './screens/Login';
-import { NotFoundPage } from './screens/NotFoundPage';
-import { CreateAccount } from './screens/CreateAccount';
-import { StudentDashboard } from './screens/StudentDashboard';
-import { EditAccount } from './screens/EditAccount';
-import { ProtectedRoute } from './components/ProtectedRoute';
+import React, { Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import { Loading } from './screens/Loading';
+
+const Courses = React.lazy(() => import('./screens/Courses'));
+const Articles = React.lazy(() => import('./screens/Articles'));
+const AccreditationsAndPartners = React.lazy(() => import('./screens/AccreditationsAndPartners'));
+const CallUs = React.lazy(() => import('./screens/CallUs'));
+const Home = React.lazy(() => import('./screens/Home'));
+const Login = React.lazy(() => import('./screens/Login'));
+const NotFoundPage = React.lazy(() => import('./screens/NotFoundPage'));
+const CreateAccount = React.lazy(() => import('./screens/CreateAccount'));
+const StudentDashboard = React.lazy(() => import('./screens/StudentDashboard'));
+const EditAccount = React.lazy(() => import('./screens/EditAccount'));
+const ProtectedRoute = React.lazy(() => import('./components/ProtectedRoute'));
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <Home />
+      </Suspense>
+    ),
+    errorElement: <NotFoundPage />,
   },
   {
     path: '/sign-in',
-    element: <Login />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <Login />
+      </Suspense>
+    ),
+    errorElement: <NotFoundPage />,
   },
   {
     path: '/create-account',
-    element: <CreateAccount />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <CreateAccount />
+      </Suspense>
+    ),
+    errorElement: <NotFoundPage />,
   },
   {
     path: 'courses',
-    element: <Courses />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <Courses />
+      </Suspense>
+    ),
+    errorElement: <NotFoundPage />,
   },
   {
     path: 'articles',
-    element: <Articles />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <Articles />
+      </Suspense>
+    ),
+    errorElement: <NotFoundPage />,
   },
   {
     path: 'accreditations-and-partners',
-    element: <AccreditationsAndPartners />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <AccreditationsAndPartners />
+      </Suspense>
+    ),
+    errorElement: <NotFoundPage />,
   },
   {
     path: 'call-us',
-    element: <CallUs />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <CallUs />
+      </Suspense>
+    ),
+    errorElement: <NotFoundPage />,
   },
   {
     path: '*',
-    element: <NotFoundPage />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <NotFoundPage />
+      </Suspense>
+    ),
   },
   {
     path: '/',
-    element: <ProtectedRoute />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <ProtectedRoute />
+      </Suspense>
+    ),
+    errorElement: <NotFoundPage />,
     children: [
       {
         path: 'dashboard',
-        element: <StudentDashboard />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <StudentDashboard />
+          </Suspense>
+        ),
+        errorElement: <NotFoundPage />,
       },
       {
         path: 'dashboard/edit-account',
-        element: <EditAccount />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <EditAccount />
+          </Suspense>
+        ),
+        errorElement: <NotFoundPage />,
       },
     ],
   },

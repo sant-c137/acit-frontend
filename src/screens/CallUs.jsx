@@ -1,6 +1,6 @@
-import { Header } from "../components/Header";
+import { Header } from '../components/Header';
 
-export const CallUs = () => {
+const CallUs = () => {
   return (
     <>
       <Header />
@@ -9,3 +9,5 @@ export const CallUs = () => {
     </>
   );
 };
+
+export default CallUs;

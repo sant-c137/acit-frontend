@@ -1,0 +1,25 @@
+.Loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(
+    110.23deg,
+    rgba(255, 255, 255, 0.5) -48.01%,
+    rgba(131, 221, 255, 0.5) 371.76%
+  );
+}
+
+.Loading-loader {
+  height: 200px;
+  animation: animate 1s ease infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}

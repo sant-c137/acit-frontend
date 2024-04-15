@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-export const StudentDashboard = () => {
+const StudentDashboard = () => {
   const [userData, setUserData] = useState({});
   const [userProfilePicture, setUserProfilePicture] = useState(null);
 
@@ -107,3 +107,5 @@ export const StudentDashboard = () => {
     </>
   );
 };
+
+export default StudentDashboard;

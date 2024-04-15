@@ -4,7 +4,7 @@ import { CoursesCard } from '../components/CoursesCard';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 
-export const Courses = () => {
+const Courses = () => {
   return (
     <>
       <div className="header-courses">
@@ -64,3 +64,5 @@ export const Courses = () => {
     </>
   );
 };
+
+export default Courses;

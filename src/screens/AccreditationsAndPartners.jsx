@@ -1,6 +1,6 @@
-import { Header } from "../components/Header";
+import { Header } from '../components/Header';
 
-export const AccreditationsAndPartners = () => {
+const AccreditationsAndPartners = () => {
   return (
     <>
       <Header />
@@ -8,3 +8,5 @@ export const AccreditationsAndPartners = () => {
     </>
   );
 };
+
+export default AccreditationsAndPartners;

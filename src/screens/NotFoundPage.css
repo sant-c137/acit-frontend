@@ -1,0 +1,36 @@
+.NotFoundPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(
+    110.23deg,
+    rgba(255, 255, 255, 0.5) -48.01%,
+    rgba(131, 221, 255, 0.5) 371.76%
+  );
+  color: #0b325c;
+}
+
+.NotFoundPage-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.NotFoundPage-message {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.NotFoundPage-link {
+  padding: 0.8rem 1.6rem;
+  background-color: #14bcfb;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+}
+
+.NotFoundPage-link:hover {
+  background: rgb(74, 146, 173);
+
+}

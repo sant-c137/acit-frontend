@@ -4,7 +4,7 @@ import { Footer } from '../components/Footer';
 import { useState } from 'react';
 import './CreateAccount.css';
 
-export const CreateAccount = () => {
+const CreateAccount = () => {
   const { t } = useTranslation('global');
 
   const [formData, setFormData] = useState({
@@ -99,7 +99,9 @@ export const CreateAccount = () => {
                 value={formData.username}
                 onChange={handleChange}
               />
-              {errors.username && <small className="error">{errors.username}</small>}
+              {errors.username && (
+                <small className="error">{errors.username}</small>
+              )}
             </div>
 
             <div>
@@ -199,7 +201,9 @@ export const CreateAccount = () => {
                 <option value="female">{t('createAccount.female')}</option>
                 <option value="other">{t('createAccount.other')}</option>
               </select>
-              {errors.gender && <small className="error">{errors.gender}</small>}
+              {errors.gender && (
+                <small className="error">{errors.gender}</small>
+              )}
             </div>
 
             <div>
@@ -237,7 +241,9 @@ export const CreateAccount = () => {
                 </option>
                 {/* ... */}
               </select>
-              {errors.education && <small className="error">{errors.education}</small>}
+              {errors.education && (
+                <small className="error">{errors.education}</small>
+              )}
             </div>
 
             <button
@@ -263,3 +269,5 @@ export const CreateAccount = () => {
     </>
   );
 };
+
+export default CreateAccount;

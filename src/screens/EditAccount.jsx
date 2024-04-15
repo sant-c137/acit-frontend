@@ -5,7 +5,7 @@ import axios from 'axios';
 import path from 'path';
 import './EditAccount.css';
 
-export const EditAccount = () => {
+const EditAccount = () => {
   const [id, setId] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -136,3 +136,5 @@ export const EditAccount = () => {
     </>
   );
 };
+
+export default EditAccount;

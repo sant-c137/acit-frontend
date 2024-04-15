@@ -1,3 +1,4 @@
+import './Login.css';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { useState, useRef } from 'react';
@@ -5,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { Link, Navigate } from 'react-router-dom';
 import { useAuth } from '../auth/AuthProvider';
 
-export const Login = () => {
+const Login = () => {
   const { t } = useTranslation('global');
 
   const { isAuthenticated, updateAuthStatus } = useAuth();
@@ -216,3 +217,5 @@ export const Login = () => {
     </>
   );
 };
+
+export default Login;
