@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import './Header.css';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useContext } from 'react';
 import { LanguageContext } from '../LanguageContext';
@@ -62,10 +62,10 @@ export const Header = () => {
           </li>
         </ul>
       </nav>
-      <div className="logo-header">
+      <Link to="/" className="logo-header">
         <img src="LogoName.svg" alt="" />
         <img src="LogoWhite.svg" alt="" />
-      </div>
+      </Link>
       <div>
         <br />
       </div>

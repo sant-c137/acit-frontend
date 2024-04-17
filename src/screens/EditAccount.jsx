@@ -1,8 +1,7 @@
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import axios from 'axios';
-import path from 'path';
 import './EditAccount.css';
 
 const EditAccount = () => {
@@ -14,8 +13,12 @@ const EditAccount = () => {
   const [imagePreviewUrl, setImagePreviewUrl] = useState(null);
   const [error, setError] = useState(null);
 
+  const [isLoading, setIsLoading] = useState(false);
+  const btnRef = useRef(null);
+  const spinnerRef = useRef(null);
+
   const handleFileInputClick = () => {
-    const fileInput = document.querySelector('.upload-edit-account');
+    const fileInput = document.querySelector('.EditAccount-upload');
     fileInput.click();
   };
 
@@ -36,10 +39,12 @@ const EditAccount = () => {
 
   const handleEditAccount = async (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
+    
     // Validar campos de entrada
-    if ( !username || !email || !password) {
+    if (!username || !email || !password) {
       setError('Por favor, complete todos los campos');
+      setIsLoading(false);
       return;
     }
 
@@ -73,25 +78,28 @@ const EditAccount = () => {
 
       // Manejar la respuesta del servidor
       console.log('Usuario actualizado exitosamente:', response.data);
+      setIsLoading(false);
+
       // Mostrar mensaje de éxito al usuario o realizar alguna otra acción
     } catch (error) {
       setError('Error al actualizar el usuario');
       console.error('Error al actualizar el usuario:', error);
+      setIsLoading(false);
     }
   };
 
   return (
     <>
-      <div className="header-container">
+      <div className="Header-container">
         <Header />
       </div>
-      <section className="section-create-account">
-        <form className="form-edit-account">
+      <section className="EditAccount-section">
+        <form className="EditAccount-form">
           {error && <p>{error}</p>}
-          <img src={imagePreviewUrl} alt="" className="img-edit-account" />
-          <div className="img-container-edit-account">
+          <img src={imagePreviewUrl} alt="" className="EditAccount-img" />
+          <div className="EditAccount-imgContainer">
             <img src="EditAccount.svg" alt="" />
-            <span className="button" onClick={handleFileInputClick}>
+            <span className="Button" onClick={handleFileInputClick}>
               Subir foto de perfil
             </span>
             <input
@@ -99,12 +107,12 @@ const EditAccount = () => {
               name="profile_picture"
               accept="image/*"
               style={{ display: 'none' }}
-              className="upload-edit-account"
+              className="EditAccount-upload"
               onChange={handleImageSelect}
             />
           </div>
           <input
-            className="input-edit-account"
+            className="EditAccount-input"
             type="text"
             placeholder="Full name"
             name="username"
@@ -112,7 +120,7 @@ const EditAccount = () => {
             onChange={(event) => setUsername(event.target.value)}
           />
           <input
-            className="input-edit-account"
+            className="EditAccount-input"
             type="email"
             placeholder="E-mail"
             name="email"
@@ -120,15 +128,28 @@ const EditAccount = () => {
             onChange={(event) => setEmail(event.target.value)}
           />
           <input
-            className="input-edit-account"
+            className="EditAccount-input"
             type="password"
             placeholder="Password"
             name="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />
-          <button className="button-edit-account" onClick={handleEditAccount}>
-            Edit account
+          <button
+            className={`EditAccount-button ${isLoading ? 'Loading' : ''}`}
+            onClick={handleEditAccount}
+            ref={btnRef}
+          >
+            {isLoading ? (
+              <img
+                src="BlueLoader.svg"
+                alt=""
+                className="login-loader loader-checked"
+                ref={spinnerRef}
+              />
+            ) : (
+              'Edit account'
+            )}
           </button>
         </form>
       </section>

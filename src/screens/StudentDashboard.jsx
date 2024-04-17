@@ -3,7 +3,7 @@ import { Footer } from '../components/Footer';
 import './StudentDashboard.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 const StudentDashboard = () => {
   const [userData, setUserData] = useState({});
@@ -44,7 +44,6 @@ const StudentDashboard = () => {
       <div className="header-container">
         <Header />
       </div>
-
       <div className="student-dashboard-container">
         <div key={id} className="student-dashboard-account-info">
           {userProfilePicture && <img src={userProfilePicture} alt="" />}
@@ -92,7 +91,7 @@ const StudentDashboard = () => {
                     <img src="Whatsapp.svg" alt="" />
                   </div>
                 </td>
-                <td>
+                <td> 
                   <button className="btn-lectures">Lectures</button>
                 </td>
               </tr>

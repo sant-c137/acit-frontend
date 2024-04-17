@@ -292,6 +292,10 @@ form {
   height: 100%;
 }
 
+.error{
+  color: red;
+}
+
 @media (width <= 500px) {
   .login-container {
     margin: 35px 0px;

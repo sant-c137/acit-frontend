@@ -1,10 +1,18 @@
-.form-edit-account {
-  display: flex;
-  flex-direction: column;
-  max-width: 625px;
-  background-color: white;
-  align-items: center;
+.Header-container {
+  background-color: #14bcfb;
+}
 
+.EditAccount-section {
+  background: var(--background-gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.EditAccount-form {
+  width: 624px;
   box-shadow: 0px 4px 24px 0px #095f902e;
   background: #ffffff;
   border-radius: 24px;
@@ -16,15 +24,14 @@
   margin: 70px 0px;
 }
 
-.img-edit-account {
+.EditAccount-img {
   width: 103px;
   aspect-ratio: 1/1;
   border-radius: 100%;
   border: 1px solid black;
-
 }
 
-.input-edit-account  {
+.EditAccount-input {
   height: 52px;
   width: 100%;
   box-sizing: border-box;
@@ -42,7 +49,7 @@
   text-align: left;
 }
 
-.button-edit-account {
+.EditAccount-button {
   margin-top: 15px;
   min-width: 265px;
   height: 52px;
@@ -59,7 +66,21 @@
   transition: all 0.3s ease;
 }
 
-.img-container-edit-account {
+.EditAccount-button.Loading {
+  background: #fff;
+  color: #14bcfb;
+  border: 3px solid #14bcfb;
+}
+
+.EditAccount-button:hover {
+  background: #fff;
+  color: #14bcfb;
+  border: 3px solid #14bcfb;
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+.EditAccount-imgContainer {
   display: flex;
   align-items: flex-end;
   font-weight: 400;
@@ -69,14 +90,8 @@
   color: #6f6c90;
 }
 
-.img-container-edit-account:hover {
-  text-decoration: underline;
-}
-
-
-.upload-edit-account {
+.EditAccount-upload {
   border: none;
   background-color: none;
   appearance: none;
-
 }

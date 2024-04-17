@@ -1,14 +1,9 @@
-.header-container {
-  background: #14bcfb;
+.CreateAccount-header {
+  background: var(--primary-color);
 }
 
-.section-create-account {
-  background: linear-gradient(
-    110.23deg,
-    rgba(255, 255, 255, 0.5) -48.01%,
-    rgba(131, 221, 255, 0.5) 371.76%
-  );
-
+.CreateAccount {
+  background: var(--background-gradient);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +12,31 @@
   position: relative;
 }
 
-.create-account-container {
+.CreateAccount-decorationLinesR {
+  display: none;
+}
+
+.CreateAccount-decorationLines {
+  position: absolute;
+  top: 0%;
+  z-index: -1;
+  left: 0%;
+}
+
+@media (max-width: 500px) {
+  .CreateAccount-decorationLines {
+    display: none;
+  }
+  .CreateAccount-decorationLinesR {
+    display: block;
+    position: absolute;
+    top: -110px;
+    left: 0px;
+    z-index: -1;
+  }
+}
+
+.CreateAccount-container {
   width: 867px;
   box-shadow: 0px 4px 24px 0px #095f902e;
   background: #ffffff;
@@ -30,16 +49,15 @@
   margin: 70px 0px;
 }
 
-.create-account-container h1 {
+.CreateAccount-title {
   font-weight: 700;
   font-size: 20px;
   line-height: 37px;
   text-transform: capitalize;
-
-  color: #1a457b;
+  color: var(--secondary-color);
 }
 
-.formulary {
+.CreateAccount-form {
   display: flex;
   min-width: 250px;
   flex-grow: 1;
@@ -50,30 +68,33 @@
   text-align: left;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #1a457b;
+  color: var(--secondary-color);
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
 
-.error {
+.CreateAccount-error {
   color: red;
+  position: absolute;
+  top: 90%;
 }
 
-.formulary div {
+.CreateAccount-formGroup {
   display: flex;
   flex-direction: column;
   min-width: 300px;
   max-width: 600px;
   justify-content: center;
+  position: relative;
 }
 
-.formulary input {
+.CreateAccount-input {
   border: 1px solid black;
   height: 52px;
   max-width: 370px;
   box-sizing: border-box;
-  background: linear-gradient(293.42deg, #fdfeff 10.12%, #ffffff 93.81%);
+  background: linear-gradient(293.42deg, #FDFEFF 10.12%, #FFFFFF 93.81%);
   border: 1px solid rgba(16, 36, 71, 0.14);
   border-radius: 12px;
   font-family: 'Cairo Variable', sans-serif;
@@ -86,11 +107,11 @@
   text-align: left;
 }
 
-.formulary select {
+.CreateAccount-select {
   height: 52px;
   max-width: 370px;
   box-sizing: border-box;
-  background: linear-gradient(293.42deg, #fdfeff 10.12%, #ffffff 93.81%);
+  background: linear-gradient(293.42deg, #FDFEFF 10.12%, #FFFFFF 93.81%);
   border: 1px solid rgba(16, 36, 71, 0.14);
   border-radius: 12px;
   font-family: 'Cairo Variable', sans-serif;
@@ -104,26 +125,44 @@
   padding-right: 40px;
 }
 
-.formulary input:focus {
+.CreateAccount-input:focus {
   border-color: #33ff00 !important;
 }
 
-.formulary input:invalid {
+.CreateAccount-input:invalid {
   border-color: red;
 }
 
-/* .formulary input:valid {
-  border-color: rgb(255, 221, 0);
-} */
+.CreateAccount-separationLine {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
 
-.create-account-btn {
+.CreateAccount-separationLine hr {
+  width: 100%;
+  height: 0px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  border: 1px solid rgba(0, 0, 0, 0.13);
+}
+
+.CreateAccount-separationLine h6 {
+  margin: 20px 15px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 35px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.CreateAccount-button--createAccount {
   width: 266px;
   height: 52px;
-  color: #1a457b;
-
-  background: #39c0c0;
+  color: var(--main-text-color);
+  background: var(--primary-color);
   border-radius: 50px;
-
   width: 266px;
   height: 52px;
   border-radius: 50px;
@@ -132,19 +171,53 @@
   font-size: 16px;
   line-height: 9px;
   letter-spacing: 0.02em;
+  border: none;
+  transition: all 0.3s ease;
 }
 
-.sign-in-btn {
+.CreateAccount-button--createAccount.Loading {
+  background: #fff;
+  color: var(--primary-color);
+  border: 3px solid var(--primary-color);
+}
+
+.CreateAccount-button--createAccount:hover {
+  border: 3px solid var(--primary-color);
+  background: #fff;
+  color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.login-loader {
+  animation: animate 1s ease infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.CreateAccount-button--signIn {
   width: 266px;
   height: 52px;
   background-color: #fff;
-
-  border: 2px solid #1a457b;
+  border: 3px solid var(--secondary-color);
   border-radius: 50px;
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
   line-height: 9px;
   letter-spacing: 0.02em;
-  color: #1a457b;
+  color: var(--secondary-color);
+  transition: all 0.3s ease;
+}
+
+.CreateAccount-button--signIn:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+  transform: scale(1.05);
 }

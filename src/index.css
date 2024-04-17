@@ -5,25 +5,68 @@ body {
   background-color: #ffffff;
   font-weight: 700;
   font-size: 12px;
-  /* background-color: rgb(142, 142, 142); */
-  font-size: 1rem; 
-   
+
+  font-size: 1rem;
 }
 
 button {
   font-family: 'Cairo Variable', sans-serif;
   font-size: 12px;
-  
 }
 
-/* @media (max-width: 699px) {
-  body {
+::selection {
+  background-color: var(--accent-color);
+  color: var(--main-text-color);
+}
+
+:root {
+  --primary-color: #14bcfb;
+  --secondary-color: #1a457b;
+  --main-text-color: #fff;
+  --accent-color: #39c0c0;
+  --background-gradient: linear-gradient(
+    110.23deg,
+    rgba(255, 255, 255, 0.5) -48.01%,
+    rgba(131, 221, 255, 0.5) 371.76%
+  );
+}
+
+:root {
+  font-size: 1rem;
+}
+
+@media (width < 600px) {
+  :root {
     font-size: 0.8rem;
   }
 }
 
-@media (max-width: 499px) {
-  body {
-    font-size: 0.7rem;
-  }
-} */
+/* Para dispositivos pequeños */
+@media (max-width: 576px) {
+  /* Estilos para dispositivos pequeños */
+}
+
+/* Para tablets en horizontal */
+@media (min-width: 768px) {
+  /* Estilos para tablets */
+}
+
+/* Para computadoras de escritorio y laptops */
+@media (min-width: 992px) {
+  /* Estilos para dispositivos grandes */
+}
+
+/* Para pantallas de alta resolución */
+@media (min-width: 1200px) {
+  /* Estilos para dispositivos extra grandes */
+}
+
+/* Para dispositivos en orientación horizontal */
+@media (orientation: landscape) {
+  /* Estilos para orientación horizontal */
+}
+
+/* Para dispositivos en orientación vertical */
+@media (orientation: portrait) {
+  /* Estilos para orientación vertical */
+}
