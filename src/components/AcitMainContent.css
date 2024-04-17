@@ -54,7 +54,7 @@ section {
 }
 
 .image-container {
-  background-image: url("/BackgroundImage.jpg");
+  background-image: url("/BackgroundImage.webp");
   background-size: cover;
 
   background-repeat: no-repeat;

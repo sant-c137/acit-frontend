@@ -100,6 +100,12 @@ header {
   position: relative;
 }
 
+@media (max-width: 1025px) {
+  .header-sections ul li {
+    display: none;
+  } 
+}
+
 @media only screen and (max-width: 600px) {
   .header-sections ul li {
     display: none;

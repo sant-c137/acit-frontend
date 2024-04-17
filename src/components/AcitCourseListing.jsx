@@ -113,6 +113,7 @@ export const AcitCourseListing = () => {
             students="12 طالب"
             lessons="12 درس"
             price="4,500.00"
+            image='CourseImage.webp'
           />
         </div>
 

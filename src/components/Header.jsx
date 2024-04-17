@@ -56,15 +56,10 @@ export const Header = () => {
           <li>
             <Link to="/call-us">{t('header.call-us')}</Link>
           </li>
-
-          <li>
-            <Link to="/">Home</Link>
-          </li>
         </ul>
       </nav>
       <Link to="/" className="logo-header">
-        <img src="LogoName.svg" alt="" />
-        <img src="LogoWhite.svg" alt="" />
+        <img src="AcitLogo.svg" alt="" />
       </Link>
       <div>
         <br />
