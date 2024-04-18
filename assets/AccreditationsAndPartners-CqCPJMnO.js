@@ -1,1 +1,0 @@
-import{j as r}from"./index-xZsc_l3v.js";import{H as e}from"./Header-kg2XUOFg.js";const n=()=>r.jsxs(r.Fragment,{children:[r.jsx(e,{}),r.jsx("h1",{children:"Este es el partners"})]});export{n as default};
