@@ -1,1 +1,0 @@
-import{j as e,a as t}from"./index-jbrOlVRl.js";const s=()=>e.jsxs("div",{className:"NotFoundPage",children:[e.jsx("h1",{className:"NotFoundPage-title u-textCenter",children:"404"}),e.jsx("p",{className:"NotFoundPage-message u-textCenter",children:"Oops! Page not found."}),e.jsx(t,{to:"/",className:"NotFoundPage-link u-textCenter",children:"Go to Home"})]});export{s as default};

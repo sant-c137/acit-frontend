@@ -1,0 +1,1 @@
+import{j as r}from"./index-xZsc_l3v.js";import{H as s}from"./Header-kg2XUOFg.js";const o=()=>r.jsxs(r.Fragment,{children:[r.jsx(s,{}),r.jsx("h1",{children:"Este es el articulos"})]});export{o as default};

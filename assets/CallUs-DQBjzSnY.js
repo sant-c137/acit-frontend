@@ -1,1 +1,0 @@
-import{j as e}from"./index-jbrOlVRl.js";import{H as s}from"./Header-DJ2lw2K8.js";const a=()=>e.jsxs(e.Fragment,{children:[e.jsx(s,{}),e.jsx("h1",{children:"Este es el contactame"})]});export{a as default};
